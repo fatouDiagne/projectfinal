@@ -1,5 +1,5 @@
 # projectfinal
-Sur le fichier dbConfig mettez-y les élément de connexion a la base de donnée
+Sur le fichier dbConfig.js mettez-y les élément de connexion a la base de donnée
 Pour se connecter a l'application: username: fatou@etu.sn,  password: passer123
 
 Pour ajouter une note tout les champs de du formalaire sont obligatoire sinon la requête ne passe pas 
