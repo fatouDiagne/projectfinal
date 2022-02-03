@@ -70,22 +70,15 @@ async function verifiedLogin(params) {
     const result = '';
     //const password = 
     if (!user || !(await bcrypt.compare(passwordhash, user.password))) {
-        //function(err, res){
-        /*if (res) {
-            return'connexion réussi';
-        }
-        else {
-            throw 'password invalide';
-        }*/
+        
         throw 'password or email invalide'
     }
 
-    //});
-    //return result
+    
     else {
         const token = jwt.sign({ sub: user.id }, config.secret, { expiresIn: '7d' });
     return { ...(user.get()), token };
-        //return 'connexion réussit';
+        
 }
 }
 
