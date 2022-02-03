@@ -79,20 +79,11 @@ const Dashboard = () => {
         },
       },
     }));
-  //const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-  /*const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };*/
-
-  /*const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-    };*/
+  
     const  getEtudiant = () => {
        axios.get("http://localhost:8080/etudiant",
            {
-           headers:{"token":`Bearer ${getToken ()}` }
+           headers:{"accesss_token":`Bearer ${getToken ()}` }
        })
             .then(res => {
                 setListEtudiant(res.data)

@@ -3,85 +3,7 @@ const bcrypt = require('bcryptjs');
 const db = require('../config/db');
 const config = require('../config/dbConfig');
 const jwt = require('jsonwebtoken');
-/*module.exports = {
 
-    prof: (req, res) => {
-        const email = req.body.email;
-        const password = req.body.password;
-        if (email === null, password === null)
-            console.log("Donner les paramètres");
-        {
-
-        }
-    },
-
-    login: (req, res) => {
-        const email = req.body.email;
-        const password = req.body.password;
-
-        if (email==null && password==null) {
-            console.log("donner les paramètres");
-        }
-        dbConn.query("select * from prof where email= ?", [email], (err, rows) => {
-            try {
-                if (!err) {
-                    if (rows[0].password === password) {
-                        console.log("connecxion réussit")
-                    }
-                    else
-                        console.log("password invalide")
-                }
-            }
-            catch (err) {
-                console.log("email invalide")
-            }
-        })
-    },
-
-    etudiant: (req, res) => {
-        const firstName = req.body.firstName;
-        const lastName = req.body.lastName;
-        const dateNaiss = req.body.dateNaissance;
-        const note = req.body.note1;
-
-        if (firstName===null, lastName===null,dateNaiss===null, note===null)
-            console.log("donner les paramètre");
-        {
-            dbConn.query("insert into etudiant (firstName, lastName, dateNaissance, note1) values(?,?,?,?)", [firstName, lastName, dateNaiss, note], (err, rows) => {
-                if (!err)
-                    res.send("insertion réussit")
-                else
-                    console.log(err);
-            })
-        }
-    },
-    getAllEtudiant: (req, res) => {
-        dbConn.query('select * from etudiant', (err, rows) => {
-            if (!!err)
-                console.log("suppression réussi");
-            else
-                console.log(err)
-        })
-    },
-    updateEtudiant: async (req, res) => {
-        const firstName = req.body.firstName;
-        const lastName = req.body.lastName;
-        const dateNaiss = req.body.dateNaissance;
-        const note1 = req.body.note1;
-        const note2 = req.body.note2;
-        const moyenne = req.body.moyenne;
-        //const id = req.params.id;
-
-       await dbConn.query('update etudiant set firstName=?, lastName=?, dateNaissance=?, note1=?, note2=?, moyenne=? where idEtu=?',[firstName, lastName, dateNaiss, note1, note2, moyenne, req.params.id], (err, result) => {
-            if (err)
-                console.log(err);
-           res.json({
-                message: "Mis a jour effectué"
-            });
-        })
-         
-    }
-}*/
 
 module.exports = {
     getAllEtudiant,
@@ -122,7 +44,7 @@ async function updateEtudiant(idEtu, params) {
     Object.assign(etudiant, params);
     await etudiant.save();
 
-}
+}   
 async function getEtudiant(idEtu) {
     const etudiant = await db.Etudiant.findByPk(idEtu)
     if (!etudiant) throw 'Etudiant not found';

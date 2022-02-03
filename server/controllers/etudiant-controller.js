@@ -15,7 +15,7 @@ module.exports = {
     },
 
     getAllEtudiant: function (req, res, next) {
-        const headersAuth = req.headers["token"];
+        const headersAuth = req.headers["accesss_token"];
         if (!headersAuth)
             return res.status(400).json({ error: "Token invalide !" });
         else{
@@ -31,7 +31,7 @@ module.exports = {
             .catch(next);
     },
     createEtudiant: function  (req, res, next) {
-        const headersAuth = req.headers["token"];
+        const headersAuth = req.headers["accesss_token"];
         if (!headersAuth)
             return res.status(400).json({ error: "Token invalide !" });
         else {
@@ -44,7 +44,7 @@ module.exports = {
         
     },
     updateEtudiant: (req, res, next) => {
-        const headersAuth = req.headers["token"];
+        const headersAuth = req.headers["accesss_token"];
         if (!headersAuth)
             return res.status(400).json({ error: "Token invalide !" });
         else {

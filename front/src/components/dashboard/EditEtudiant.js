@@ -29,7 +29,7 @@ const EditEtudiant = () => {
     const getEtudiant = () => {
         axios.get(`http://localhost:8080/etudiant/${idEtu}`,
            {
-               headers: { "token": `Bearer ${getToken()}` }
+               headers: { "accesss_token": `Bearer ${getToken()}` }
            })
            .then( async (res) => {
                 await setListEtudiant(res.data)
@@ -58,7 +58,7 @@ const EditEtudiant = () => {
             note2: note2,
             moyenne: calculMoyenne(note1,note2)
         },
-               {headers: { "token": `Bearer ${getToken()}` }
+               {headers: { "accesss_token": `Bearer ${getToken()}` }
            }
         )
         .then (res => {

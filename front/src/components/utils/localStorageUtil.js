@@ -16,5 +16,9 @@ export let getLocalStorage = (key) => {
 };
 
 export let getToken = () => {
-    return getLocalStorage('token');
+    return getLocalStorage('accesss_token');
 };
+
+/*export let getAuth = () => {
+    return 
+}*/

@@ -30,20 +30,14 @@ const SignIn = () => {
             .then(res => {
             //console.log(res)
               if (res.status = 200) {
-                //setLocalStorage('user', res.data);
-                setLocalStorage('token', res.data.token);
+                setLocalStorage('accesss_token', res.data.token);
                     navigate('/dashboard');
                 }
             })
             .catch(err => {
                 console.log(err);
             })
-    // eslint-disable-next-line no-console
-    /*console.log({
-      //email:data.get('email'),
-      //password: data.get('password'),
-    });
-        //navigate('/dashboard');*/
+    
   };
     return (
         <div>

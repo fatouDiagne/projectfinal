@@ -27,7 +27,7 @@ const AddEtudiant = () => {
             moyenne: calculMoyenne(note1,note2)
         } ,
         {
-            headers: { "token": `Bearer ${getToken()}` }}
+            headers: { "accesss_token": `Bearer ${getToken()}` }}
             )
             .then(res => {
                 console.log(res);
